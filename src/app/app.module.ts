@@ -1,3 +1,4 @@
+import { TitleCaseComponent } from './title-case/title-case.component';
 import { AuthorsService } from './authors/authors.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,8 +7,8 @@ import { AppComponent } from './app.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { SummaryPipe } from './summary.pipe';
-import { TitleCaseComponent } from './title-case/title-case.component';
 import { FormsModule } from '@angular/forms';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { FormsModule } from '@angular/forms';
     AuthorsComponent,
     FavoriteComponent,
     SummaryPipe,
+    PanelComponent,
     TitleCaseComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,

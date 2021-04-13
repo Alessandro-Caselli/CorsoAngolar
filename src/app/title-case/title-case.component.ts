@@ -5,15 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './title-case.component.html',
   styleUrls: ['./title-case.component.css']
 })
-export class TitleCaseComponent implements OnInit {
+export class TitleCaseComponent {
 
   testo = "";
-  
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
