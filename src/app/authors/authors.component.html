@@ -1,0 +1,10 @@
+
+<h2>{{ authorsList.length }} Authors</h2>
+<ul>
+    <li *ngFor="let author of authorsList">
+        {{author}}
+    </li>
+</ul>
+<br>
+<br>
+<button class="btn {{primary ? 'btn-primary' : 'btn-warning'}}" (click)="onClick()">CIAO</button>
