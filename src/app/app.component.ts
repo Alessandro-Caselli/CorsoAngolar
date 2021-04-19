@@ -4,7 +4,6 @@ import { FavoriteChangedEventArgs } from './favorite/favorite.component';
 
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +17,7 @@ export class AppComponent {
     isLiked: false
   }
   viewMode = "title";
+  courseNumber = 3;
   courses = [
     { id: 1, name: 'course1 ' },
     { id: 1, name: 'course2 ' },
@@ -25,7 +25,15 @@ export class AppComponent {
   ]
 
 
-
+  onAdd() {
+    this.courseNumber++;
+    let lastId = this.courses.length;
+    this.courses.push({ id: lastId, name: 'course'+(this.courseNumber) });
+  }
+  onRemove(course: any) {
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
 
   onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
     console.log("Favorites Changed", eventArgs);
