@@ -1,34 +1,39 @@
 <ul class="nav nav-pills">
     <li class="nav-item" >
-        <a class="nav-link active" [class.active]="viewMode == 'title'" (click)="viewMode = 'title'">
+        <a class="nav-link " [class.active]="viewMode == 'title'" (click)="viewMode = 'title'">
             Title
         </a>
     </li>
     <li class="nav-item" >
-        <a class="nav-link active" [class.active]="viewMode == 'favorite'" (click)="viewMode = 'favorite'">
+        <a class="nav-link " [class.active]="viewMode == 'favorite'" (click)="viewMode = 'favorite'">
             Favorite
         </a>
     </li>
     <li class="nav-item" >
-        <a class="nav-link active" [class.active]="viewMode == 'like'" (click)="viewMode = 'like'">
+        <a class="nav-link " [class.active]="viewMode == 'like'" (click)="viewMode = 'like'">
             Like
         </a>
     </li>
     <li class="nav-item" >
-        <a class="nav-link active" [class.active]="viewMode == 'panel'" (click)="viewMode = 'panel'">
+        <a class="nav-link " [class.active]="viewMode == 'panel'" (click)="viewMode = 'panel'">
             Panel
         </a>
     </li>
     <li class="nav-item" >
-        <a class="nav-link active" [class.active]="viewMode == 'for'" (click)="viewMode = 'for'">
+        <a class="nav-link " [class.active]="viewMode == 'for'" (click)="viewMode = 'for'">
             ngFor
         </a>
     </li>
     <li class="nav-item" >
-        <a class="nav-link active" [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map View</a>
+        <a class="nav-link " [class.active]="viewMode == 'map'" (click)="viewMode = 'map'">Map View</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" [class.active]="viewMode == 'list'" (click)="viewMode = 'list'">List</a>
+    </li>
+    <li class="nav-item" >
+        <a class="nav-link " [class.active]="viewMode == 'form'" (click)="viewMode = 'form'">
+            FORM
+        </a>
     </li>
     
 </ul><br><br>
@@ -62,5 +67,6 @@
     </div>
     <div *ngSwitchCase="'map'">Map View Content</div>
     <div *ngSwitchCase="'list'">List View Content</div>
+    <div *ngSwitchCase="'form'"><contact-form></contact-form></div>
     <div *ngSwitchDefault>Ciao</div>
 </div>

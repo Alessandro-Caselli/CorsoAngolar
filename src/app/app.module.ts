@@ -10,6 +10,7 @@ import { SummaryPipe } from './summary.pipe';
 import { FormsModule } from '@angular/forms';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LikeComponent } from './like/like.component';
     PanelComponent,
     TitleCaseComponent,
     PanelComponent,
-    LikeComponent
+    LikeComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
