@@ -35,6 +35,11 @@
             FORM
         </a>
     </li>
+    <li class="nav-item" >
+        <a class="nav-link " [class.active]="viewMode == 'corso'" (click)="viewMode = 'corso'">
+            Crea Corso
+        </a>
+    </li>
     
 </ul><br><br>
 <div [ngSwitch]="viewMode">
@@ -70,5 +75,6 @@
     <div *ngSwitchCase="'map'">Map View Content</div>
     <div *ngSwitchCase="'list'">List View Content</div>
     <div *ngSwitchCase="'form'"><contact-form></contact-form></div>
+    <div *ngSwitchCase="'corso'"><course-form></course-form></div>
     <div *ngSwitchDefault>Ciao</div>
 </div>

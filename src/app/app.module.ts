@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PanelComponent } from './panel/panel.component';
 import { LikeComponent } from './like/like.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { CourseFormComponent } from './course-form/course-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     TitleCaseComponent,
     PanelComponent,
     LikeComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    CourseFormComponent
   ],
   imports: [
     BrowserModule,

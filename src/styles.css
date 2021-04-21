@@ -2,6 +2,8 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.css";
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-body {
-    padding: 20px;
+body { padding: 20px; }
+
+.form-control.ng-touched.ng-invalid {
+    border: 2px solid red;
 }
