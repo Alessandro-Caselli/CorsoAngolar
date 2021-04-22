@@ -10,7 +10,9 @@ export class CourseFormComponent {
     { id: 1, name: "Development" },
     { id: 2, name: "Art" },
     { id: 3, name: "Languages" },
-  ]
+  ];
 
-
+  submit(form: any) {
+    console.log(form);
+  }
 }
