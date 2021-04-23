@@ -8,20 +8,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup-form.component.css']
 })
 export class SignupFormComponent {
-  form = new FormGroup(
-    { username: new FormControl('',[
-       Validators.required,
-       UsernameValidator.minlength,
-       UsernameValidator.cannotContainSpace
-      ],
-      UsernameValidator.shouldBeUnique),
-      password: new FormControl('', Validators.required) 
+  form = new FormGroup({
+    account: new FormGroup({
+      username: new FormControl('',[
+          Validators.required,
+          UsernameValidator.minlength,
+          UsernameValidator.cannotContainSpace
+        ],
+        UsernameValidator.shouldBeUnique),
+      password: new FormControl('', Validators.required)
     })
+  });
+
+    login() {
+      this.form.setErrors({
+       invalidLogin: true
+    });
+  }
 
   get username() {
-      return this.form.get('username');
+      return this.form.get('account.username');
   }
   get password() {
-    return this.form.get('password');
-}
+    return this.form.get('account.password');
+  }
 }
