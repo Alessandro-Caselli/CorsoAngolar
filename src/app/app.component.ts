@@ -17,7 +17,7 @@ export class AppComponent {
     isLiked: false
   }
 
-  viewMode = "PWD";
+  viewMode = "posts";
   courseNumber = 3;
   courses = [
     { id: 1, name: 'course1 ' },
