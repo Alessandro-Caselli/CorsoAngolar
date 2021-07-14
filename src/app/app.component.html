@@ -45,6 +45,11 @@
             Signup
         </a>
     </li>
+    <li class="nav-item" >
+        <a class="nav-link " [class.active]="viewMode == 'PWD'" (click)="viewMode = 'PWD'">
+            PWD
+        </a>
+    </li>
     
 </ul><br><br>
 <div [ngSwitch]="viewMode">
@@ -82,5 +87,6 @@
     <div *ngSwitchCase="'form'"><contact-form></contact-form></div>
     <div *ngSwitchCase="'corso'"><course-form></course-form></div>
     <div *ngSwitchCase="'signup'"><signup-form></signup-form></div>
+    <div *ngSwitchCase="'PWD'"><password></password></div>
     <div *ngSwitchDefault>Ciao</div>
 </div>

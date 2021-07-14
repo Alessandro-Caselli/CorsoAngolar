@@ -13,6 +13,7 @@ import { LikeComponent } from './like/like.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { SignupFormComponent } from './signup-form/signup-form.component';
+import { PasswordComponent } from './password/password.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SignupFormComponent } from './signup-form/signup-form.component';
     LikeComponent,
     ContactFormComponent,
     CourseFormComponent,
-    SignupFormComponent
+    SignupFormComponent,
+    PasswordComponent
   ],
   imports: [
     BrowserModule,
