@@ -1,4 +1,4 @@
-import { PostService } from './post.service';
+import { PostService } from './services/post.service';
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { AuthorsService } from './authors/authors.service';
 import { NgModule } from '@angular/core';

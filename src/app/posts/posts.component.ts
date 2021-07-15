@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { PostService } from './../services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,42 +8,70 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
   posts !: any[];
-  private url = 'https://jsonplaceholder.typicode.com/posts';
   
-  constructor(private http: HttpClient) {
+  
+  constructor(private service: PostService) {
   }
 
   ngOnInit() {
-    this.http.get(this.url)
-      .subscribe(response => {
-        this.posts = <any[]> response;
-      })
+    this.service.getPosts()
+      .subscribe(
+        response => {
+          this.posts = <any[]> response;
+      },
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+      });
   }
 
   createPost(input: HTMLInputElement) {
     let post:any = { title: input.value };
     input.value = '';
-
-    this.http.post(this.url, post)
-      .subscribe(response => {
-        post.id = response;
-        this.posts.splice(0, 0, post)
-        console.log(response);
-      })
+    this.service.postPosts(post)
+      .subscribe(
+        response => {
+          post.id = response;
+          this.posts.splice(0, 0, post)
+          console.log(response);
+      },
+       error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+      });
   }
 
   updatePost(post: any) {
-    this.http.patch(this.url + '/' + post.id, {isRead: true})
-      .subscribe(response => {
-        console.log(response)
-      })
+    this.service.updatePosts(post)
+      .subscribe(
+        response => {
+          console.log(response)
+      },
+        error => {
+          alert('An unexpected error occurred.');
+          console.log(error);
+      });
   }
 
   deletePost(post: any){
-    this.http.delete(this.url + '/' + post.id)
-      .subscribe(response => {
-        let index = this.posts.indexOf(post);
-        this.posts.splice(index, 1);
-      })
+    this.service.deletePosts(345)
+      .subscribe(
+        response => {
+           let index = this.posts.indexOf(post);
+          this.posts.splice(index, 1); 
+      },
+        (error: Response) => {
+          if (error.status == 404)
+            {
+              alert('This post has already been deleted.');
+              console.log(error);
+            }
+          else {
+            alert('An unexpected error occurred.');
+            console.log(error);
+          }
+      });
   }
+
+
 }
