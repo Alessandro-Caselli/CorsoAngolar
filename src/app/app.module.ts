@@ -1,3 +1,4 @@
+import { PostService } from './post.service';
 import { TitleCaseComponent } from './title-case/title-case.component';
 import { AuthorsService } from './authors/authors.service';
 import { NgModule } from '@angular/core';
@@ -41,7 +42,8 @@ import { PostsComponent } from './posts/posts.component';
     HttpClientModule
   ],
   providers: [
-    AuthorsService
+    AuthorsService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
