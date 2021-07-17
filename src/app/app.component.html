@@ -55,6 +55,11 @@
             Posts
         </a>
     </li>
+    <li class="nav-item" >
+        <a class="nav-link " [class.active]="viewMode == 'followers'" (click)="viewMode = 'followers'">
+            Followers
+        </a>
+    </li>
     
 </ul><br><br>
 <div [ngSwitch]="viewMode">
@@ -94,5 +99,6 @@
     <div *ngSwitchCase="'signup'"><signup-form></signup-form></div>
     <div *ngSwitchCase="'PWD'"><password></password></div>
     <div *ngSwitchCase="'posts'"><posts></posts></div>
+    <div *ngSwitchCase="'followers'"><followers></followers></div>
     <div *ngSwitchDefault>Ciao</div>
 </div>

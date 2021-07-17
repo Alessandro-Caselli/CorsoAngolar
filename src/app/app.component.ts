@@ -17,7 +17,7 @@ export class AppComponent {
     isLiked: false
   }
 
-  viewMode = "posts";
+  viewMode = "followers";
   courseNumber = 3;
   courses = [
     { id: 1, name: 'course1 ' },

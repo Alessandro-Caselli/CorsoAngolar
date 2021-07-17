@@ -13,7 +13,6 @@ import { Component, OnInit } from '@angular/core';
 export class PostsComponent implements OnInit {
   posts !: any[];
   
-  
   constructor(private service: PostService) {
   }
 
